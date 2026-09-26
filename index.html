@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#fff8ef">
+<title>For Loveena</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Nunito:wght@500;700;800;900&display=swap');
+
+:root{
+  --paper:#fff8ef;
+  --ink:#211d1b;
+  --pink:#ff7e92;
+  --yellow:#ffd65a;
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:var(--paper);color:var(--ink)}
+body{font-family:Nunito,system-ui,-apple-system,sans-serif;overflow-x:hidden}
+.page{
+  min-height:100svh;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:28px 20px;
+  position:relative;
+}
+.page.active{display:flex;animation:in .45s ease both}
+@keyframes in{
+  from{opacity:0;transform:translateY(12px) scale(.985)}
+  to{opacity:1;transform:none}
+}
+.card{width:min(410px,100%);text-align:center;position:relative}
+.kicker{font-size:12px;letter-spacing:.12em;text-transform:uppercase;opacity:.48;font-weight:900}
+h1{font-family:"Patrick Hand",cursive;font-size:43px;line-height:1;margin:12px 0 10px}
+p{font-size:17px;line-height:1.5;margin:8px auto;max-width:340px}
+.hand{font-family:"Patrick Hand",cursive}
+.cat{font-size:74px;margin:8px 0 2px;filter:drop-shadow(0 5px 0 rgba(0,0,0,.08))}
+.sign{
+  border:3px solid var(--ink);
+  background:#fff;
+  padding:14px 18px;
+  display:inline-block;
+  transform:rotate(-1.5deg);
+  box-shadow:5px 5px 0 var(--ink);
+  margin:8px 0
+}
+.sign b{font-family:"Patrick Hand",cursive;font-size:38px}
+.tape{
+  display:inline-block;
+  background:#ffe486;
+  padding:6px 12px;
+  transform:rotate(-2deg);
+  font-family:"Patrick Hand",cursive;
+  font-size:22px;
+  margin:8px 0
+}
+button{
+  font:800 16px Nunito,sans-serif;
+  border:2.5px solid var(--ink);
+  background:var(--pink);
+  color:#fff;
+  border-radius:999px;
+  padding:14px 22px;
+  box-shadow:4px 4px 0 var(--ink);
+  margin-top:20px;
+  cursor:pointer
+}
+button:active{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+.doodle{
+  position:absolute;
+  font-family:"Patrick Hand",cursive;
+  font-size:32px;
+  pointer-events:none
+}
+.d1{top:6%;left:7%;transform:rotate(-16deg)}
+.d2{top:11%;right:7%;transform:rotate(13deg)}
+.d3{bottom:7%;left:8%;transform:rotate(8deg)}
+.d4{bottom:9%;right:8%;transform:rotate(-9deg)}
+.tiny{font-size:12px;opacity:.5;margin-top:14px}
+.personal{
+  background:#fff;
+  border:2px dashed var(--ink);
+  padding:16px 18px;
+  margin:18px auto 4px;
+  max-width:340px;
+  transform:rotate(.6deg);
+}
+.personal p{font-size:16px;margin:5px auto}
+.heart{font-size:28px}
+.confetti span{
+  position:fixed;
+  top:-30px;
+  font-size:20px;
+  animation:fall 2.4s linear forwards
+}
+@keyframes fall{
+  to{transform:translateY(110vh) rotate(520deg)}
+}
+</style>
+</head>
+
+<body>
+
+<section class="page active" id="p1">
+  <span class="doodle d1">✦</span>
+  <span class="doodle d2">♡</span>
+  <div class="card">
+    <div class="kicker">for Loveena • a very serious website</div>
+    <div class="cat">🐱</div>
+    <div class="sign"><b>You clicked!</b></div>
+    <h1>I knew curiosity would win 😌</h1>
+    <div class="tape">Stay wild, stay curious.</div>
+    <p>Since you're already here… might as well see what you've unlocked.</p>
+    <button onclick="go(2)">Okay, I'm curious →</button>
+  </div>
+</section>
+
+<section class="page" id="p2">
+  <span class="doodle d1">〰</span>
+  <span class="doodle d2">✦</span>
+  <div class="card">
+    <div class="kicker">a tiny personal update</div>
+    <h1>Okay, fine.</h1>
+    <p>You made it this far, so here's the slightly more personal part.</p>
+
+    <div class="personal">
+      <div class="heart">♡</div>
+      <p><b>You’re curious.</b></p>
+      <p>You have very good taste in chocolate.</p>
+      <p>And somehow, conversations with you can go from completely random to surprisingly good pretty easily. 😌</p>
+    </div>
+
+    <button onclick="go(3)">Okay, continue →</button>
+  </div>
+</section>
+
+<section class="page" id="p3">
+  <span class="doodle d1">♡</span>
+  <span class="doodle d2">✦</span>
+  <span class="doodle d3">〰</span>
+  <span class="doodle d4">♡</span>
+
+  <div class="card">
+    <div class="kicker">the actual reason for this QR</div>
+    <h1>A tiny corner of the internet, made for you.</h1>
+
+    <p>No grand speech. No hidden agenda.</p>
+    <p>Just a little something because apparently you’re the kind of person who will actually scan a mysterious QR code. 😂</p>
+
+    <div class="sign">
+      <b>Honestly?<br>I'm glad you did.</b>
+    </div>
+
+    <p class="hand" style="font-size:23px">And yes… excellent chocolate taste. 😌</p>
+
+    <button onclick="finish()">One last thing →</button>
+  </div>
+</section>
+
+<section class="page" id="p4">
+  <div class="card">
+    <div class="heart" style="font-size:58px">♡</div>
+    <h1>That's it.</h1>
+    <p>You successfully completed the most unnecessary QR experience™.</p>
+    <div class="tape">Stay wild, stay curious 😌</div>
+    <p class="hand" style="font-size:22px;margin-top:18px">
+      I'm genuinely glad you’re here.
+    </p>
+    <div class="tiny">End of extremely important internet business.</div>
+  </div>
+</section>
+
+<div id="confetti"></div>
+
+<script>
+function go(n){
+  const current=document.querySelector('.page.active');
+  if(current) current.classList.remove('active');
+
+  const next=document.getElementById('p'+n);
+  if(next) next.classList.add('active');
+
+  window.scrollTo(0,0);
+
+  if(n===3) confetti();
+}
+
+function finish(){
+  go(4);
+}
+
+function confetti(){
+  const box=document.getElementById('confetti');
+  const bits=['✦','♡','•','★','✧'];
+
+  for(let i=0;i<18;i++){
+    const s=document.createElement('span');
+    s.textContent=bits[Math.floor(Math.random()*bits.length)];
+    s.style.left=Math.random()*100+'vw';
+    s.style.animationDelay=(Math.random()*.7)+'s';
+    s.style.animationDuration=(1.8+Math.random()*1.4)+'s';
+    box.appendChild(s);
+    setTimeout(()=>s.remove(),3500);
+  }
+}
+</script>
+
+</body>
+</html>
